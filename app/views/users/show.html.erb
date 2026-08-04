@@ -1,0 +1,21 @@
+<% content_for :title, "#{@user.name} | PhotoApp" %>
+
+<section class="page-stack">
+  <section class="profile-card">
+    <%= image_tag image_path(@user.avatar), alt: @user.name, class: "profile-card__avatar" %>
+
+    <div class="profile-card__body">
+      <p class="eyebrow">Profile</p>
+      <h1 class="page-title"><%= @user.name %></h1>
+      <p class="profile-card__handle"><%= @user.handle %></p>
+      <p class="profile-card__bio"><%= @user.bio %></p>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <h2 class="section-block__title">投稿した写真</h2>
+    <div class="photo-list">
+      <%= render partial: "shared/photo_row", collection: @photos, as: :photo, locals: { show_author: false } %>
+    </div>
+  </section>
+</section>

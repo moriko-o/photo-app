@@ -1,0 +1,72 @@
+<% content_for :title, "#{@photo.title} | PhotoApp" %>
+
+<section class="photo-detail">
+  <article class="photo-detail__card">
+    <%= image_tag image_path(@photo.image), alt: @photo.title, class: "photo-detail__image" %>
+
+    <div class="photo-detail__body">
+      <%= link_to user_path(@author.slug), class: "photo-detail__author" do %>
+        <%= image_tag image_path(@author.avatar), alt: @author.name, class: "photo-detail__avatar" %>
+        <span>
+          <strong><%= @author.name %></strong>
+          <small><%= @author.handle %></small>
+        </span>
+      <% end %>
+
+      <p class="photo-detail__status"><%= @photo.mood %></p>
+      <h1 class="page-title"><%= @photo.title %></h1>
+      <p class="photo-detail__caption"><%= @photo.caption %></p>
+
+      <dl class="photo-detail__meta">
+        <div>
+          <dt>投稿日時</dt>
+          <dd><%= formatted_datetime(@photo.published_at) %></dd>
+        </div>
+        <div>
+          <dt>いいね</dt>
+          <dd><%= number_compact(@photo.likes_count) %></dd>
+        </div>
+        <div>
+          <dt>フォロー</dt>
+          <dd><%= @photo.following ? "フォロー中" : "未フォロー" %></dd>
+        </div>
+      </dl>
+
+      <div class="photo-detail__actions">
+        <button
+          type="button"
+          class="action-chip action-chip--ghost"
+          data-controller="share"
+          data-share-share-text-value="<%= "#{@photo.title} / #{@author.name}" %>"
+          data-share-share-url-value="<%= photo_path(@photo.slug) %>"
+          data-action="click->share#share">
+          SNSシェア
+        </button>
+
+        <button
+          type="button"
+          class="action-chip"
+          data-controller="reaction-toggle"
+          data-reaction-toggle-active-value="<%= @photo.liked %>"
+          data-reaction-toggle-active-label-value="いいね済み"
+          data-reaction-toggle-inactive-label-value="いいね"
+          data-action="click->reaction-toggle#toggle">
+          <span aria-hidden="true">♥</span>
+          <span data-reaction-toggle-target="label"><%= @photo.liked ? "いいね済み" : "いいね" %></span>
+        </button>
+
+        <button
+          type="button"
+          class="action-chip"
+          data-controller="reaction-toggle"
+          data-reaction-toggle-active-value="<%= @photo.following %>"
+          data-reaction-toggle-active-label-value="フォロー中"
+          data-reaction-toggle-inactive-label-value="フォロー"
+          data-action="click->reaction-toggle#toggle">
+          <span aria-hidden="true">＋</span>
+          <span data-reaction-toggle-target="label"><%= @photo.following ? "フォロー中" : "フォロー" %></span>
+        </button>
+      </div>
+    </div>
+  </article>
+</section>

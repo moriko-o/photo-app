@@ -1,0 +1,13 @@
+<% content_for :title, "いいねした写真一覧 | PhotoApp" %>
+
+<section class="page-stack">
+  <header class="page-header">
+    <p class="eyebrow">Likes</p>
+    <h1 class="page-title">いいねした写真一覧</h1>
+    <p class="page-lead">サムネイルをタップすると写真の詳細が開きます。</p>
+  </header>
+
+  <div class="photo-list">
+    <%= render partial: "shared/photo_row", collection: @photos, as: :photo, locals: { show_author: true } %>
+  </div>
+</section>

@@ -1,0 +1,34 @@
+<header class="topbar" data-controller="menu">
+  <div class="topbar__inner">
+    <%= link_to root_path, class: "brand" do %>
+      <span class="brand__mark" aria-hidden="true">◔</span>
+      <span class="brand__text">
+        <strong>PhotoApp</strong>
+        <small>random first, mobile first</small>
+      </span>
+    <% end %>
+
+    <button
+      type="button"
+      class="menu-button"
+      aria-label="メニューを開く"
+      aria-expanded="false"
+      aria-controls="site-menu"
+      data-menu-target="button"
+      data-action="click->menu#toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="menu-backdrop" data-menu-target="backdrop" data-action="click->menu#backdropClose" hidden>
+    <nav id="site-menu" class="menu-drawer" aria-label="グローバルナビ" data-menu-target="panel" hidden>
+      <%= link_to "トップページ", root_path, class: "menu-drawer__link" %>
+      <%= link_to "マイページ", mypage_path, class: "menu-drawer__link" %>
+      <%= link_to "いいねした写真一覧", likes_path, class: "menu-drawer__link" %>
+      <button type="button" class="menu-drawer__link menu-drawer__button" data-action="click->menu#close click->modal#open">写真アップロード</button>
+      <%= link_to "このサイトについて", about_path, class: "menu-drawer__link" %>
+    </nav>
+  </div>
+</header>

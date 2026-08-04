@@ -1,0 +1,27 @@
+<% content_for :title, "マイページ | PhotoApp" %>
+
+<section class="page-stack">
+  <section class="profile-card">
+    <%= image_tag image_path(@user.avatar), alt: @user.name, class: "profile-card__avatar" %>
+
+    <div class="profile-card__body">
+      <p class="eyebrow">My page</p>
+      <h1 class="page-title"><%= @user.name %></h1>
+      <p class="profile-card__handle"><%= @user.handle %></p>
+      <p class="profile-card__bio"><%= @user.bio %></p>
+
+      <div class="profile-card__actions">
+        <button type="button" class="action-chip action-chip--ghost" data-action="click->modal#open">
+          写真アップロード
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <h2 class="section-block__title">今までに投稿した写真一覧</h2>
+    <div class="photo-list">
+      <%= render partial: "shared/photo_row", collection: @photos, as: :photo, locals: { show_author: false } %>
+    </div>
+  </section>
+</section>

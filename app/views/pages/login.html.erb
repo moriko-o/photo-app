@@ -1,0 +1,28 @@
+<% content_for :title, "ログイン | PhotoApp" %>
+
+<section class="auth-layout">
+  <div class="auth-layout__copy">
+    <p class="eyebrow">Login</p>
+    <h1>ログイン画面</h1>
+    <p>
+      まだ認証は未実装です。ここではフォームの見た目とレスポンシブの確認だけを行います。
+    </p>
+  </div>
+
+  <div class="auth-card">
+    <label class="field">
+      <span>メールアドレス</span>
+      <input type="email" placeholder="you@example.com">
+    </label>
+
+    <label class="field">
+      <span>パスワード</span>
+      <input type="password" placeholder="password">
+    </label>
+
+    <div class="auth-card__actions">
+      <button type="button" class="button button--primary">ログイン</button>
+      <%= link_to "トップへ戻る", root_path, class: "text-link" %>
+    </div>
+  </div>
+</section>

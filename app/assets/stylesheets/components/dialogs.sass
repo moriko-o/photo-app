@@ -1,0 +1,42 @@
+.modal
+  border: 0
+  padding: 0
+  background: transparent
+  width: min(100vw - 1rem, 720px)
+
+.modal::backdrop
+  background: rgba(15, 11, 8, 0.44)
+  backdrop-filter: blur(6px)
+
+.modal__panel
+  padding: 1rem
+  border-radius: $radius-xl
+  background: $surface-strong
+  border: 1px solid $border
+  box-shadow: $shadow
+  display: grid
+  gap: 0.9rem
+
+.modal__header
+  display: flex
+  align-items: start
+  justify-content: space-between
+  gap: 1rem
+
+.modal__header h2
+  margin: 0.1rem 0 0
+  font-size: 1.1rem
+
+.modal__body
+  display: grid
+  gap: 0.8rem
+
+.modal__actions
+  display: grid
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+  gap: 0.5rem
+
+.modal__hint p
+  margin: 0
+  color: $text-muted
+  line-height: 1.7

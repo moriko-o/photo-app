@@ -1,0 +1,15 @@
+<% content_for :title, "ブックマーク一覧 | PhotoApp" %>
+
+<section class="section-stack">
+  <header class="section-heading">
+    <div>
+      <p class="eyebrow">Bookmarks</p>
+      <h1>ブックマーク一覧</h1>
+    </div>
+    <%= link_to "トップへ", root_path, class: "text-link" %>
+  </header>
+
+  <div class="photo-grid photo-grid--compact">
+    <%= render partial: "shared/photo_card", collection: @photos, as: :photo, locals: { compact: true, show_author: true } %>
+  </div>
+</section>

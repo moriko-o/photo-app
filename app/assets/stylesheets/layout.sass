@@ -1,0 +1,388 @@
+.topbar
+  position: sticky
+  top: 0
+  z-index: 30
+  backdrop-filter: blur(18px)
+  background: rgba(249, 244, 236, 0.88)
+  border-bottom: 1px solid rgba(29, 23, 18, 0.08)
+
+.topbar__inner
+  width: min(100% - 1rem, 720px)
+  margin: 0 auto
+  min-height: 4.5rem
+  display: flex
+  align-items: center
+  justify-content: space-between
+  gap: 1rem
+
+.brand
+  display: inline-flex
+  align-items: center
+  gap: 0.75rem
+
+.brand__mark
+  width: 2.6rem
+  height: 2.6rem
+  border-radius: 50%
+  display: grid
+  place-items: center
+  background: linear-gradient(145deg, $accent, $accent-strong)
+  color: white
+  box-shadow: $shadow
+  font-size: 1.1rem
+
+.brand__text
+  display: grid
+  gap: 0.1rem
+
+.brand__text strong
+  font-size: 1rem
+
+.brand__text small
+  color: $text-muted
+  font-size: 0.78rem
+
+.menu-backdrop
+  position: fixed
+  inset: 0
+  background: rgba(19, 15, 11, 0.34)
+  z-index: 40
+
+.menu-drawer
+  position: absolute
+  top: 4.9rem
+  right: 0.5rem
+  width: min(92vw, 320px)
+  padding: 0.75rem
+  border-radius: $radius-xl
+  background: $surface-strong
+  border: 1px solid $border
+  box-shadow: $shadow
+  display: grid
+  gap: 0.35rem
+
+.site-main
+  padding-top: 0.75rem
+
+.home-page,
+.page-stack,
+.photo-detail
+  display: grid
+  gap: 1rem
+
+.photo-stage
+  display: grid
+  gap: 0.9rem
+
+.photo-stage__frame
+  position: relative
+  overflow: hidden
+  border-radius: $radius-xl
+  background: $surface
+  border: 1px solid $border
+  box-shadow: $shadow
+  aspect-ratio: 3 / 4
+  touch-action: pan-y
+
+.photo-stage__image
+  width: 100%
+  height: 100%
+  object-fit: cover
+
+.photo-stage__next
+  position: absolute
+  right: 0.8rem
+  top: 50%
+  transform: translateY(-50%)
+  width: 3rem
+  height: 3rem
+  border-radius: 50%
+  border: 0
+  background: rgba(255, 255, 255, 0.92)
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16)
+  font-size: 1.35rem
+  font-weight: 700
+
+.photo-stage__hint
+  position: absolute
+  left: 0.8rem
+  bottom: 0.8rem
+  margin: 0
+  padding: 0.45rem 0.7rem
+  border-radius: 999px
+  background: rgba(10, 8, 6, 0.42)
+  color: white
+  font-size: 0.78rem
+  backdrop-filter: blur(12px)
+
+.photo-stage__body
+  display: grid
+  gap: 0.9rem
+  padding: 0 0.15rem
+
+.photo-stage__author
+  display: inline-flex
+  align-items: center
+  gap: 0.75rem
+  width: fit-content
+
+.photo-stage__avatar
+  width: 2.8rem
+  height: 2.8rem
+  border-radius: 50%
+  object-fit: cover
+  border: 1px solid $border
+
+.photo-stage__author-copy
+  display: grid
+  gap: 0.05rem
+
+.photo-stage__author-copy strong
+  font-size: 0.98rem
+
+.photo-stage__author-copy small
+  color: $text-muted
+  font-size: 0.8rem
+
+.photo-stage__header
+  display: grid
+  gap: 0.25rem
+
+.photo-stage__status
+  margin: 0
+  color: $accent
+  font-size: 0.82rem
+  font-weight: 700
+  text-transform: uppercase
+  letter-spacing: 0.12em
+
+.photo-stage__title
+  margin: 0
+  font-family: "Iowan Old Style", "Palatino Linotype", serif
+  font-size: clamp(1.8rem, 8vw, 3rem)
+  line-height: 1.04
+  letter-spacing: -0.04em
+
+.photo-stage__caption
+  margin: 0
+  color: $text-muted
+  line-height: 1.75
+
+.photo-stage__meta
+  display: grid
+  gap: 0.65rem
+  margin: 0
+
+.photo-stage__meta div
+  display: flex
+  align-items: baseline
+  justify-content: space-between
+  gap: 0.75rem
+  padding: 0.7rem 0.85rem
+  border-radius: $radius-md
+  background: rgba(255, 255, 255, 0.58)
+  border: 1px solid $border
+
+.photo-stage__meta dt
+  color: $text-muted
+  font-size: 0.82rem
+
+.photo-stage__meta dd
+  margin: 0
+  font-weight: 700
+
+.photo-stage__actions
+  display: grid
+  grid-template-columns: repeat(3, minmax(0, 1fr))
+  gap: 0.5rem
+
+.profile-card
+  display: grid
+  grid-template-columns: 90px minmax(0, 1fr)
+  gap: 1rem
+  padding: 1rem
+  border-radius: $radius-xl
+  background: $surface
+  border: 1px solid $border
+  box-shadow: $shadow
+
+.profile-card__avatar
+  width: 90px
+  height: 90px
+  border-radius: 50%
+  object-fit: cover
+  border: 1px solid $border
+
+.profile-card__body
+  display: grid
+  gap: 0.55rem
+
+.profile-card__handle
+  margin: 0
+  color: $text-muted
+
+.profile-card__bio
+  margin: 0
+  color: $text-muted
+  line-height: 1.7
+
+.profile-card__actions
+  display: flex
+  flex-wrap: wrap
+  gap: 0.5rem
+
+.page-header
+  display: grid
+  gap: 0.45rem
+
+.about-grid
+  display: grid
+  gap: 0.85rem
+
+.photo-detail__card
+  display: grid
+  gap: 0.9rem
+  padding: 1rem
+  border-radius: $radius-xl
+  background: $surface
+  border: 1px solid $border
+  box-shadow: $shadow
+
+.photo-detail__image
+  width: 100%
+  aspect-ratio: 3 / 4
+  object-fit: cover
+  border-radius: calc($radius-xl - 6px)
+
+.photo-detail__body
+  display: grid
+  gap: 0.9rem
+
+.photo-detail__author
+  display: inline-flex
+  align-items: center
+  gap: 0.75rem
+  width: fit-content
+
+.photo-detail__avatar
+  width: 2.8rem
+  height: 2.8rem
+  border-radius: 50%
+  object-fit: cover
+  border: 1px solid $border
+
+.photo-detail__author span
+  display: grid
+
+.photo-detail__author small
+  color: $text-muted
+
+.photo-detail__status
+  margin: 0
+  color: $accent
+  font-size: 0.82rem
+  font-weight: 700
+  text-transform: uppercase
+  letter-spacing: 0.12em
+
+.photo-detail__caption
+  margin: 0
+  color: $text-muted
+  line-height: 1.75
+
+.photo-detail__meta
+  display: grid
+  gap: 0.6rem
+  margin: 0
+
+.photo-detail__meta div
+  display: flex
+  align-items: baseline
+  justify-content: space-between
+  gap: 0.75rem
+  padding: 0.7rem 0.85rem
+  border-radius: $radius-md
+  background: rgba(255, 255, 255, 0.58)
+  border: 1px solid $border
+
+.photo-detail__meta dt
+  color: $text-muted
+  font-size: 0.82rem
+
+.photo-detail__meta dd
+  margin: 0
+  font-weight: 700
+
+.photo-detail__actions
+  display: grid
+  grid-template-columns: repeat(3, minmax(0, 1fr))
+  gap: 0.5rem
+
+.about-card
+  padding: 1rem
+  border-radius: $radius-xl
+  background: $surface
+  border: 1px solid $border
+  box-shadow: $shadow
+
+.about-card__title
+  margin: 0 0 0.5rem
+  font-size: 1rem
+
+.about-card__body
+  margin: 0
+  color: $text-muted
+  line-height: 1.75
+
+.photo-list
+  display: grid
+  gap: 0.75rem
+
+.photo-row
+  display: grid
+  grid-template-columns: 92px minmax(0, 1fr)
+  gap: 0.75rem
+  padding: 0.8rem
+  border-radius: $radius-xl
+  background: $surface
+  border: 1px solid $border
+  box-shadow: $shadow
+
+.photo-row__thumb
+  width: 92px
+  height: 92px
+  overflow: hidden
+  border-radius: $radius-lg
+
+.photo-row__image
+  width: 100%
+  height: 100%
+  object-fit: cover
+
+.photo-row__body
+  display: grid
+  gap: 0.35rem
+
+.photo-row__topline
+  display: flex
+  justify-content: space-between
+  gap: 0.5rem
+  color: $text-muted
+  font-size: 0.8rem
+
+.photo-row__title
+  margin: 0
+  font-size: 1rem
+
+.photo-row__caption
+  margin: 0
+  color: $text-muted
+  line-height: 1.65
+  font-size: 0.92rem
+
+.photo-row__link
+  grid-column: 1 / -1
+  justify-self: end
+  color: $accent-strong
+  font-size: 0.88rem
+  font-weight: 700

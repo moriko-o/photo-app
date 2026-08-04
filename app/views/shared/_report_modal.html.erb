@@ -1,0 +1,42 @@
+<div class="modal-launcher" data-controller="modal">
+  <button type="button" class="button button--ghost" data-action="click->modal#open">
+    通報
+  </button>
+
+  <dialog class="modal" data-modal-target="dialog" aria-labelledby="report-title" data-action="click->modal#backdropClose">
+    <div class="modal__panel modal__panel--narrow">
+      <div class="modal__header">
+        <div>
+          <p class="eyebrow">Report content</p>
+          <h2 id="report-title">通報モーダル</h2>
+        </div>
+        <button type="button" class="icon-button" aria-label="モーダルを閉じる" data-action="click->modal#close">×</button>
+      </div>
+
+      <div class="modal__body">
+        <p class="modal__lead">対象: <strong><%= report_target %></strong></p>
+
+        <div class="form-grid">
+          <label class="field">
+            <span>理由</span>
+            <select>
+              <option>不適切な内容</option>
+              <option>権利侵害の疑い</option>
+              <option>スパム / なりすまし</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>補足</span>
+            <textarea rows="4" placeholder="必要な補足を書いてください"></textarea>
+          </label>
+        </div>
+      </div>
+
+      <div class="modal__actions">
+        <button type="button" class="button button--ghost" data-action="click->modal#close">閉じる</button>
+        <button type="button" class="button button--danger">通報する</button>
+      </div>
+    </div>
+  </dialog>
+</div>

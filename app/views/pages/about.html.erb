@@ -1,0 +1,18 @@
+<% content_for :title, "このサイトについて | PhotoApp" %>
+
+<section class="page-stack">
+  <header class="page-header">
+    <p class="eyebrow">About</p>
+    <h1 class="page-title">このサイトについて</h1>
+    <p class="page-lead">まだ内容は仮ですが、説明や利用規約を後から足しやすい形にしています。</p>
+  </header>
+
+  <div class="about-grid">
+    <% @about_sections.each do |section| %>
+      <article class="about-card">
+        <h2 class="about-card__title"><%= section[:title] %></h2>
+        <p class="about-card__body"><%= section[:body] %></p>
+      </article>
+    <% end %>
+  </div>
+</section>

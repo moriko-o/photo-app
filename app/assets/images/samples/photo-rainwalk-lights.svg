@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-label="Rainwalk Lights">
+  <defs>
+    <linearGradient id="night" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1d2436"/>
+      <stop offset="100%" stop-color="#09111f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#night)"/>
+  <circle cx="1280" cy="250" r="110" fill="#7ef2ff" opacity=".25"/>
+  <path d="M0 860h1600v340H0z" fill="#0d1728"/>
+  <path d="M140 860l260-420h210l-270 420z" fill="#bf6cff" opacity=".8"/>
+  <path d="M520 860l240-510h220L740 860z" fill="#2fe0c8" opacity=".78"/>
+  <path d="M920 860l280-460h180L1180 860z" fill="#ff8c4b" opacity=".84"/>
+  <rect x="0" y="760" width="1600" height="20" fill="#ffffff" opacity=".16"/>
+  <path d="M0 960c120-30 210-20 320 0s230 40 370 15 260-82 410-55 280 100 500 60v220H0Z" fill="#b6d8ff" opacity=".1"/>
+  <text x="96" y="1080" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="60" font-weight="700">Rainwalk Lights</text>
+</svg>

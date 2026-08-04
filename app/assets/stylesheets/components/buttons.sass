@@ -1,0 +1,77 @@
+@use "sass:color"
+
+.action-chip,
+.menu-button,
+.icon-button
+  border: 0
+  border-radius: 999px
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  gap: 0.5rem
+  min-height: 2.8rem
+  transition: transform 160ms ease, background 160ms ease, color 160ms ease, border-color 160ms ease
+
+.action-chip
+  padding: 0.78rem 1rem
+  background: rgba(255, 255, 255, 0.78)
+  color: $text
+  border: 1px solid $border
+  font-weight: 700
+
+.action-chip--ghost
+  background: rgba(255, 255, 255, 0.56)
+
+.action-chip.is-active
+  background: $accent-soft
+  border-color: rgba(24, 79, 87, 0.26)
+  color: $accent-strong
+
+.action-chip:hover,
+.menu-button:hover,
+.icon-button:hover
+  transform: translateY(-1px)
+
+.menu-button
+  width: 3rem
+  height: 3rem
+  padding: 0.45rem
+  background: rgba(255, 255, 255, 0.82)
+  border: 1px solid $border
+  display: grid
+  gap: 0.18rem
+
+.menu-button span
+  display: block
+  width: 1.2rem
+  height: 2px
+  border-radius: 999px
+  background: $text
+
+.icon-button
+  width: 2.6rem
+  height: 2.6rem
+  background: rgba(255, 255, 255, 0.82)
+  border: 1px solid $border
+  font-size: 1.2rem
+  line-height: 1
+
+.button
+  border: 0
+  border-radius: 999px
+  padding: 0.8rem 1rem
+  min-height: 2.8rem
+  font-weight: 700
+
+.button--primary
+  background: linear-gradient(145deg, $accent, $accent-strong)
+  color: white
+
+.button--ghost
+  background: rgba(255, 255, 255, 0.74)
+  color: $text
+  border: 1px solid $border
+
+.button--danger
+  background: linear-gradient(145deg, $danger, color.adjust($danger, $lightness: -8%))
+  color: white

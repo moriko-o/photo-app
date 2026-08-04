@@ -1,0 +1,32 @@
+<dialog class="modal" data-modal-target="dialog" aria-labelledby="upload-modal-title" data-action="click->modal#backdropClose">
+  <div class="modal__panel">
+    <div class="modal__header">
+      <div>
+        <p class="eyebrow">Photo upload</p>
+        <h2 id="upload-modal-title">写真アップロード</h2>
+      </div>
+      <button type="button" class="icon-button" aria-label="閉じる" data-action="click->modal#close">×</button>
+    </div>
+
+    <div class="modal__body">
+      <label class="field">
+        <span>タイトル</span>
+        <input type="text" placeholder="写真タイトル">
+      </label>
+
+      <label class="field">
+        <span>説明</span>
+        <textarea rows="4" placeholder="写真の説明"></textarea>
+      </label>
+
+      <div class="modal__hint">
+        <p>いまはプロト状態のため保存は行いません。フォームの見た目だけ確認できます。</p>
+      </div>
+    </div>
+
+    <div class="modal__actions">
+      <button type="button" class="button button--ghost" data-action="click->modal#close">キャンセル</button>
+      <button type="button" class="button button--primary">下書き保存</button>
+    </div>
+  </div>
+</dialog>

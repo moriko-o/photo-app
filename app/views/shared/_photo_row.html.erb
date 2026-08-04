@@ -1,0 +1,20 @@
+<article class="photo-row">
+  <%= link_to photo_path(photo.slug), class: "photo-row__thumb" do %>
+    <%= image_tag image_path(photo.image), alt: "#{photo.title}のサムネイル", class: "photo-row__image" %>
+  <% end %>
+
+  <div class="photo-row__body">
+    <div class="photo-row__topline">
+      <span class="photo-row__author"><%= show_author ? photo.author_name : "投稿者" %></span>
+      <span class="photo-row__time"><%= formatted_datetime(photo.published_at) %></span>
+    </div>
+
+    <h3 class="photo-row__title">
+      <%= link_to photo.title, photo_path(photo.slug) %>
+    </h3>
+
+    <p class="photo-row__caption"><%= photo.caption %></p>
+  </div>
+
+  <%= link_to "開く", photo_path(photo.slug), class: "photo-row__link" %>
+</article>

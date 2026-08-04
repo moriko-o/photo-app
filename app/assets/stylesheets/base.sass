@@ -1,0 +1,85 @@
+$bg: #f7f1e7
+$surface: rgba(255, 255, 255, 0.78)
+$surface-strong: #ffffff
+$border: rgba(29, 23, 18, 0.12)
+$text: #171310
+$text-muted: rgba(23, 19, 16, 0.68)
+$accent: #184f57
+$accent-strong: #0f373d
+$accent-soft: rgba(24, 79, 87, 0.12)
+$danger: #a33b4b
+$shadow: 0 18px 50px rgba(53, 33, 17, 0.14)
+$radius-xl: 30px
+$radius-lg: 24px
+$radius-md: 18px
+$radius-sm: 14px
+
+*
+  box-sizing: border-box
+
+html
+  scroll-behavior: smooth
+
+body
+  margin: 0
+  min-height: 100vh
+  color: $text
+  font-family: "Inter", "Avenir Next", "Segoe UI", sans-serif
+  background: radial-gradient(circle at top, rgba(24, 79, 87, 0.10), transparent 30%), radial-gradient(circle at right top, rgba(163, 59, 75, 0.12), transparent 28%), linear-gradient(180deg, #fdfaf6 0%, $bg 100%)
+
+a
+  color: inherit
+  text-decoration: none
+
+img
+  display: block
+  max-width: 100%
+
+button,
+input,
+textarea,
+select
+  font: inherit
+
+button
+  cursor: pointer
+
+.site-body
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+
+.site-main
+  width: min(100% - 1rem, 720px)
+  margin: 0 auto
+  padding: 1rem 0 3rem
+  flex: 1
+
+.eyebrow
+  margin: 0
+  color: $accent
+  text-transform: uppercase
+  letter-spacing: 0.16em
+  font-size: 0.72rem
+  font-weight: 700
+
+.page-title
+  margin: 0
+  font-family: "Iowan Old Style", "Palatino Linotype", serif
+  font-size: clamp(2rem, 6vw, 3.25rem)
+  line-height: 1.02
+  letter-spacing: -0.04em
+
+.page-lead
+  margin: 0
+  color: $text-muted
+  line-height: 1.7
+
+.section-block
+  display: grid
+  gap: 0.8rem
+
+.section-block__title
+  margin: 0
+  font-size: 1rem
+  letter-spacing: 0.02em

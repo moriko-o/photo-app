@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-label="Harvest Blue">
+  <rect width="1600" height="1200" fill="#5b92d9"/>
+  <rect x="0" y="0" width="1600" height="720" fill="#7bb7ff"/>
+  <rect x="0" y="720" width="1600" height="480" fill="#91c563"/>
+  <path d="M0 900c170-90 280-140 420-118s260 122 430 94 290-150 460-132 250 110 290 132v324H0Z" fill="#7cae4f"/>
+  <circle cx="1160" cy="360" r="100" fill="#ffedc4" opacity=".84"/>
+  <circle cx="250" cy="930" r="42" fill="#d9413c"/>
+  <circle cx="340" cy="980" r="42" fill="#c22f2c"/>
+  <circle cx="1230" cy="910" r="42" fill="#d9413c"/>
+  <circle cx="1315" cy="970" r="42" fill="#c22f2c"/>
+  <text x="94" y="1080" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="60" font-weight="700">Harvest Blue</text>
+</svg>

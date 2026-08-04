@@ -1,0 +1,81 @@
+<% content_for :title, "トップ | PhotoApp" %>
+
+<section
+  class="home-page"
+  data-controller="random-photo"
+  data-random-photo-photos-value="<%= json_data(@photo_payload) %>"
+  tabindex="0"
+  data-action="keydown->random-photo#keydown touchstart->random-photo#touchStart touchend->random-photo#touchEnd">
+  <article class="photo-stage">
+    <div class="photo-stage__frame">
+      <%= image_tag image_path(@current_photo.image), alt: @current_photo.title, class: "photo-stage__image", data: { random_photo_target: "image" } %>
+
+      <button type="button" class="photo-stage__next" aria-label="次の写真" data-action="click->random-photo#next">
+        →
+      </button>
+
+      <p class="photo-stage__hint">スワイプか → で次へ</p>
+    </div>
+
+    <div class="photo-stage__body">
+      <%= link_to user_path(@current_photo.author_slug), class: "photo-stage__author", data: { random_photo_target: "authorLink" } do %>
+        <%= image_tag image_path(SampleCatalog.find_user(@current_photo.author_slug).avatar), alt: @current_photo.author_name, class: "photo-stage__avatar", data: { random_photo_target: "authorAvatar" } %>
+        <span class="photo-stage__author-copy">
+          <strong data-random-photo-target="authorName"><%= @current_photo.author_name %></strong>
+          <small data-random-photo-target="authorHandle"><%= @current_photo.author_handle %></small>
+        </span>
+      <% end %>
+
+      <div class="photo-stage__header">
+        <p class="photo-stage__status" data-random-photo-target="status"><%= @current_photo.mood %></p>
+        <h1 class="photo-stage__title" data-random-photo-target="title"><%= @current_photo.title %></h1>
+      </div>
+
+      <p class="photo-stage__caption" data-random-photo-target="caption"><%= @current_photo.caption %></p>
+
+      <dl class="photo-stage__meta">
+        <div>
+          <dt>投稿日時</dt>
+          <dd data-random-photo-target="photoTime"><%= formatted_datetime(@current_photo.published_at) %></dd>
+        </div>
+        <div>
+          <dt>詳細</dt>
+          <dd><%= link_to "写真ページ", photo_path(@current_photo.slug), data: { random_photo_target: "detailLink" } %></dd>
+        </div>
+      </dl>
+
+      <div class="photo-stage__actions">
+        <button
+          type="button"
+          class="action-chip action-chip--ghost"
+          data-controller="share"
+          data-share-share-text-value="<%= "#{@current_photo.title} / #{@current_photo.author_name}" %>"
+          data-share-share-url-value="<%= photo_path(@current_photo.slug) %>"
+          data-random-photo-target="shareButton"
+          data-action="click->share#share">
+          SNSシェア
+        </button>
+
+        <button
+          type="button"
+          class="action-chip"
+          aria-pressed="<%= @current_photo.liked %>"
+          data-random-photo-target="likeButton"
+          data-action="click->random-photo#toggleLike">
+          <span aria-hidden="true">♥</span>
+          <span data-random-photo-target="likeLabel"><%= @current_photo.liked ? "いいね済み" : "いいね" %></span>
+        </button>
+
+        <button
+          type="button"
+          class="action-chip"
+          aria-pressed="<%= @current_photo.following %>"
+          data-random-photo-target="followButton"
+          data-action="click->random-photo#toggleFollow">
+          <span aria-hidden="true">＋</span>
+          <span data-random-photo-target="followLabel"><%= @current_photo.following ? "フォロー中" : "フォロー" %></span>
+        </button>
+      </div>
+    </div>
+  </article>
+</section>

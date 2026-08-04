@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-label="Ridge Clouds">
+  <defs>
+    <linearGradient id="sky2" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#78b7ff"/>
+      <stop offset="100%" stop-color="#dff0ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#sky2)"/>
+  <path d="M0 860C180 780 330 720 520 780s270 190 460 150 330-170 620-120v390H0Z" fill="#5d6d74"/>
+  <path d="M0 930C170 870 350 850 500 900s280 120 480 78 330-160 620-104v326H0Z" fill="#394750"/>
+  <path d="M120 350c80-120 280-140 380 10 74-96 224-126 320-12 130-102 304-64 348 50 102-22 202 22 244 126H0c10-80 40-132 120-174Z" fill="#ffffff" opacity=".82"/>
+  <text x="94" y="1080" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="60" font-weight="700">Ridge Clouds</text>
+</svg>

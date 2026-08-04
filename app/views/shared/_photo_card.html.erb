@@ -1,0 +1,63 @@
+<article class="photo-card <%= "photo-card--compact" if local_assigns[:compact] %>">
+  <%= link_to photo_path(photo.slug), class: "photo-card__media" do %>
+    <%= image_tag image_path(photo.image), alt: "#{photo.title} by #{photo.author_name}", class: "photo-card__image" %>
+  <% end %>
+
+  <div class="photo-card__body">
+    <div class="photo-card__topline">
+      <span class="photo-card__mood"><%= photo.mood %></span>
+      <span class="photo-card__time"><%= time_ago_label(photo.published_at) %></span>
+    </div>
+
+    <h3 class="photo-card__title">
+      <%= link_to photo.title, photo_path(photo.slug) %>
+    </h3>
+
+    <% if local_assigns.fetch(:show_author, true) %>
+      <p class="photo-card__author">
+        <%= link_to user_path(photo.author_slug) do %>
+          <%= photo.author_name %>
+          <span><%= photo.author_handle %></span>
+        <% end %>
+      </p>
+    <% end %>
+
+    <p class="photo-card__caption"><%= photo.caption %></p>
+
+    <div class="tag-list" aria-label="Tags">
+      <% photo.tags.each do |tag| %>
+        <span class="tag-pill"><%= tag %></span>
+      <% end %>
+    </div>
+
+    <div class="photo-card__footer">
+      <div class="reaction-stack">
+        <button
+          type="button"
+          class="reaction-toggle reaction-toggle--like"
+          data-controller="reaction-toggle"
+          data-reaction-toggle-active-value="<%= photo.liked %>"
+          data-reaction-toggle-active-label-value="いいね済み"
+          data-reaction-toggle-inactive-label-value="いいね"
+          data-action="click->reaction-toggle#toggle">
+          <span class="reaction-toggle__icon" aria-hidden="true">♥</span>
+          <span data-reaction-toggle-target="label">いいね</span>
+        </button>
+
+        <button
+          type="button"
+          class="reaction-toggle reaction-toggle--bookmark"
+          data-controller="reaction-toggle"
+          data-reaction-toggle-active-value="<%= photo.bookmarked %>"
+          data-reaction-toggle-active-label-value="保存済み"
+          data-reaction-toggle-inactive-label-value="ブックマーク"
+          data-action="click->reaction-toggle#toggle">
+          <span class="reaction-toggle__icon" aria-hidden="true">⌘</span>
+          <span data-reaction-toggle-target="label">ブックマーク</span>
+        </button>
+      </div>
+
+      <%= link_to "詳細を見る", photo_path(photo.slug), class: "text-link" %>
+    </div>
+  </div>
+</article>
